@@ -37,8 +37,8 @@ class Proxy:
             return proxies
         logger.error(f'failed to fetch proxies from {url}')
     
-    @classmethod
-    async def __advanced(cls, url='https://advanced.name/freeproxy'):
+    @staticmethod
+    async def __advanced(url='https://advanced.name/freeproxy'):
         logger.info(f'fetching proxies from {url}...')
         response = await anext(Requester().get_data([url]))
         if response[0]:
@@ -65,8 +65,8 @@ class Proxy:
             return proxies
         logger.error(f'failed to fetch proxies from {url}')
     
-    @classmethod
-    async def __fpl(cls, url='https://free-proxy-list.net/'):
+    @staticmethod
+    async def __fpl(url='https://free-proxy-list.net/'):
         logger.info(f'fetching proxies from {url}...')
         response = await anext(Requester().get_data([url]))
         if response[0]:
@@ -80,8 +80,8 @@ class Proxy:
             return proxies
         logger.error(f'failed to fetch proxies from {url}')
     
-    @classmethod
-    async def __htmlweb(cls, url='https://htmlweb.ru/analiz/proxy_list.php&p=1?perpage=20'):
+    @staticmethod
+    async def __htmlweb(url='https://htmlweb.ru/analiz/proxy_list.php&p=1?perpage=20'):
         logger.info(f'fetching proxies from {url}...')
         response = await anext(Requester().get_data([url]))
         if response[0]:
